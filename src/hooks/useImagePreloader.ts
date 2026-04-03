@@ -14,7 +14,7 @@ export const useImagePreloader = (path: string, count: number) => {
     for (let i = 1; i <= count; i++) {
       const img = new Image();
       // Match the actual file naming: ezgif-frame-001.jpg, ezgif-frame-002.jpg, etc.
-      img.src = `${path}/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
+      img.src = `${path}/frame-${String(i).padStart(3, "0")}.jpg`;
       img.onload = () => {
         completedCount++;
         setLoadedCount(completedCount);

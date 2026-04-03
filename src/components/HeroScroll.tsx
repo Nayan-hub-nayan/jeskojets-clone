@@ -24,8 +24,9 @@ export default function HeroScroll() {
     if (!canvas) return;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
       // Force render on resize
       window.dispatchEvent(new Event('scroll'));
     };

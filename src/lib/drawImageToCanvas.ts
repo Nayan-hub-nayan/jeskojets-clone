@@ -7,6 +7,13 @@ export const drawImageToCanvas = (
 
   ctx.clearRect(0, 0, width, height);
 
+  // Set high quality smoothing and subtle sharpening
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+  
+  // Subtle visual enhancement
+  ctx.filter = "contrast(1.05) brightness(1.02)";
+
   // Cover-fit scaling
   const scale = Math.max(width / img.width, height / img.height);
 
@@ -15,3 +22,4 @@ export const drawImageToCanvas = (
 
   ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
 };
+
